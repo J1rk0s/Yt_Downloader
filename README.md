@@ -4,5 +4,5 @@ The app is using [YoutubeExplode](https://github.com/Tyrrrz/YoutubeExplode) nuge
 - Select between playlist or video downloading
 - Select between mp3 (Only audio) or mp4 (Audio/Video) output
 
-# App screenshots
+# App screenshot
 ![App screenshot](AppScreen.png)
