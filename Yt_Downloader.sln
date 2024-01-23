@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yt_Downloader", "Yt_Downloader.csproj", "{E11FBE41-184F-4D56-901F-89F2273D1FD1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Publish|Any CPU = Publish|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E11FBE41-184F-4D56-901F-89F2273D1FD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E11FBE41-184F-4D56-901F-89F2273D1FD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E11FBE41-184F-4D56-901F-89F2273D1FD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E11FBE41-184F-4D56-901F-89F2273D1FD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E11FBE41-184F-4D56-901F-89F2273D1FD1}.Publish|Any CPU.ActiveCfg = Publish|Any CPU
+		{E11FBE41-184F-4D56-901F-89F2273D1FD1}.Publish|Any CPU.Build.0 = Publish|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1DC03381-D8DD-4ED1-85FF-B51675E405BD}
+	EndGlobalSection
+EndGlobal
