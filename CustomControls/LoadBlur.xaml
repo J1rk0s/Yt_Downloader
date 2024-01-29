@@ -7,11 +7,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Border Panel.ZIndex="1" CornerRadius="20" Width="200" Height="100" TextBlock.TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#b1a7a6">
+        <Border Panel.ZIndex="1" CornerRadius="20" Width="200" Height="130" TextBlock.TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#b1a7a6">
             <Grid>
-                <TextBlock Margin="0,0,0,30" FontWeight="Bold" VerticalAlignment="Center" Text="Downloading..." Foreground="Black"/>
-                <ProgressBar x:Name="progress" Width="180" Height="30" 
-                             Minimum="0" Maximum="100" Margin="0,30,0,0" />
+                <TextBlock Margin="0,0,0,60" FontWeight="Bold" VerticalAlignment="Center" Text="Downloading..." Foreground="Black"/>
+                <ProgressBar x:Name="Progress" Width="180" Height="30" 
+                             Minimum="0" Maximum="100" ValueChanged="ProgressValueChanged"/>
+                <TextBlock Width="100" VerticalAlignment="Center" x:Name="ProgressContent" Text="1/1"/>
+                <Button Width="100" Height="30" VerticalAlignment="Bottom" Margin="0,10" Content="Cancel" Style="{StaticResource RoundedButton}" Click="CancelButtonClick"/>
             </Grid>
         </Border>
         <Border Panel.ZIndex="0" Background="LightGray" Opacity="0.7" CornerRadius="24">

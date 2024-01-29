@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -20,19 +21,22 @@ public partial class MainWindow : Window {
         this.downloadText.Visibility = Visibility.Visible;
 
         string path = YtDownloader.GetDownloadPath();
+        
+        CancellationTokenSource tokenSource = new();
 
-        CustomControls.LoadBlur blur = new();
-        blur.Opacity = 0;
+        CustomControls.LoadBlur blur = new(ref tokenSource) {
+            Opacity = 0,
+        };
         DoubleAnimation da = new(1.0d, TimeSpan.FromMilliseconds(500));
         this.MainGrid.Children.Add(blur);
         blur.BeginAnimation(Grid.OpacityProperty, da);
 
         switch (this.urlType.SelectedIndex) {
             case 0:
-                await YtDownloader.DownloadPlaylist(path, this.url.Text ,this.Format.SelectedIndex, blur.progress, new FileLogger());
+                await YtDownloader.DownloadPlaylist(path, this.url.Text ,this.Format.SelectedIndex, blur.Progress, tokenSource.Token, new FileLogger());
                 break;
             case 1:
-                await YtDownloader.DownloadVideo(path, this.url.Text ,this.Format.SelectedIndex, new FileLogger());
+                await YtDownloader.DownloadVideo(path, this.url.Text ,this.Format.SelectedIndex, tokenSource.Token, new FileLogger());
                 break;
         }
 
