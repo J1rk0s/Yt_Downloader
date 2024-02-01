@@ -13,12 +13,16 @@ namespace Yt_Downloader;
 public partial class MainWindow : Window {
     public MainWindow() {
         this.InitializeComponent();
+
+        this.DownloadHistory.Text = string.Join("\n", GlobalConfigs.VideoHistory);
+        GlobalConfigs.VideoHistory.CollectionChanged += (sender, args) => {
+            this.DownloadHistory.Text = string.Join("\n", GlobalConfigs.VideoHistory);
+        };
     }
 
     private async void OnDownloadClick(object sender, RoutedEventArgs e) {
         Button? btn = sender as Button;
         btn!.IsEnabled = false;
-        this.downloadText.Visibility = Visibility.Visible;
 
         string path = YtDownloader.GetDownloadPath();
         
@@ -43,7 +47,6 @@ public partial class MainWindow : Window {
         this.MainGrid.Children.Remove(blur);
 
         btn.IsEnabled = true;
-        this.downloadText.Visibility = Visibility.Hidden;
 
         System.Diagnostics.Process.Start("explorer.exe", path);
     }

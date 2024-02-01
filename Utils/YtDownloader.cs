@@ -27,6 +27,8 @@ public class YtDownloader {
                 try {
                     StreamManifest manifest = await _client.Videos.Streams.GetManifestAsync(video.Url, token);
                     IStreamInfo info = YtDownloader.GetStreamInfoFromType(type, manifest);
+                    
+                    GlobalConfigs.VideoHistory.Add(video.Title);
 
                     await _client.Videos.Streams.DownloadAsync(info,
                         $"{path}/{Utils.ParseVideoName(video.Title)}.{ext}", cancellationToken: token);
@@ -60,6 +62,9 @@ public class YtDownloader {
             IStreamInfo info = YtDownloader.GetStreamInfoFromType(type, manifest);
 
             IReadOnlyList<VideoSearchResult> result = await _client.Search.GetVideosAsync(vidUrl, token);
+            
+            GlobalConfigs.VideoHistory.Add(result[0].Title);
+            
             await _client.Videos.Streams.DownloadAsync(info, $"{path}/{Utils.ParseVideoName(result[0].Title)}.{ext}",
                 cancellationToken: token);
         } catch (OperationCanceledException) {

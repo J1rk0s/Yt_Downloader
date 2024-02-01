@@ -14,7 +14,7 @@
                 <Button Style="{StaticResource ToolbarButtons}" Click="Minimize" Background="#b1a7a6" Content="-" Width="25" Margin="0,0,5,0"></Button>
                 <Button Style="{StaticResource ToolbarButtons}" Click="CloseWindow" Background="#e5383b" Content="X" Width="25"></Button>
             </StackPanel>
-            <Label Content="Link:" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center"
+            <Label Content="Video or playlist link:" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center"
                Margin="0,20,0,0" />
             <TextBox x:Name="url" Width="300" Height="25" FontSize="12"
                  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="40"
@@ -31,16 +31,18 @@
             <Label Content="Format: " VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="Bold" Margin="185,120,0,0"/>
             <ComboBox Width="100" x:Name="Format" Height="25" HorizontalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Top"
                   VerticalContentAlignment="Center" Margin="0,120,140,0" SelectedIndex="0">
-                <ComboBoxItem Content="MP3"/>
-                <ComboBoxItem Content="MP4"/>
+                <ComboBoxItem Content="Audio"/>
+                <ComboBoxItem Content="Video/Audio"/>
             </ComboBox>
 
-            <Button Style="{StaticResource RoundedButton}" Content="Download videos" Width="100" Height="25" HorizontalAlignment="Center"
-                    VerticalAlignment="Center" Margin="0,0,0,90" Click="OnDownloadClick"
-                        BorderThickness="0,0,0,0" Background="#f5f3f4"/>
-            <TextBlock x:Name="downloadText" Text="Downloading" Width="100" Height="25" TextAlignment="Center"
-                   FontSize="14"
-                   VerticalAlignment="Bottom" Margin="0,0,0,80" Visibility="Hidden" />
+            <Button Style="{StaticResource RoundedButton}" Content="Download videos" Width="120" Height="25" HorizontalAlignment="Center"
+                    VerticalAlignment="Center" Margin="0,0,0,90" Click="OnDownloadClick" Background="#8ce866"/>
+            
+            <Label Content="Download history:" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                   HorizontalContentAlignment="Center" Margin="0,0,0,20" FontWeight="Bold"/>
+            <ScrollViewer Width="400" Height="200" VerticalAlignment="Bottom" Margin="20,0,0,20">
+                <TextBlock x:Name="DownloadHistory" Background="White"/>
+            </ScrollViewer>
         </Grid>
     </Border>
 </Window>

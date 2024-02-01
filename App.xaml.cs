@@ -12,4 +12,5 @@ public partial class App : Application {
 
         if (!Directory.Exists(GlobalConfigs.LogPath)) Directory.CreateDirectory(GlobalConfigs.LogPath);
     }
+
 }

@@ -8,6 +8,10 @@
         <UseSystemResourceKeys>true</UseSystemResourceKeys>
         <OptimizationPreference>Size</OptimizationPreference>
         <ApplicationIcon>Downloader.ico</ApplicationIcon>
+        <IsPackable>false</IsPackable>
+        <Company>J1rk0s</Company>
+        <AssemblyVersion>1.2.0</AssemblyVersion>
+        <FileVersion>1.2.0</FileVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
